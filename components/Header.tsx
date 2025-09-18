@@ -8,8 +8,10 @@ import Link from 'next/link';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -26,20 +28,20 @@ const Header = () => {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
+        isMounted && isScrolled 
           ? 'bg-white/95 backdrop-blur-lg shadow-lg border-b border-purple-100' 
           : 'bg-transparent'
-      }`}
+      } ${isMounted ? 'sm:bg-white sm:border-2 sm:border-purple-500 sm:rounded-full sm:mx-4 sm:mt-4 sm:overflow-hidden' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className={`max-w-7xl mx-auto px-6 lg:px-8 ${isMounted ? 'sm:px-4' : ''}`}>
+        <div className={`flex items-center justify-between h-20 ${isMounted ? 'sm:h-16' : ''}`}>
           {/* Logo */}
           
-            <div className="w-28 h-28 flex items-center justify-center">
-              <img src="/logo-without-bg.png" alt="cliq logo" />
+            <div className={`w-28 h-28 flex items-center justify-center ${isMounted ? 'sm:w-20 sm:h-20' : ''}`}>
+              <img src="/logo-without-bg.png" alt="cliq logo" className="w-full h-full object-contain" />
             </div>
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -78,7 +80,7 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100"
+            className="lg:hidden p-2 rounded-lg hover:bg-purple-50 text-gray-700 hover:text-purple-600 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -92,7 +94,7 @@ const Header = () => {
           animate={{ height: isMobileMenuOpen ? 'auto' : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="py-4 space-y-4 border-t border-gray-100">
+          <div className="py-4 space-y-4 border-t border-purple-200 sm:border-purple-300">
             {navItems.map((item) => (
               <a
                 key={item.name}
