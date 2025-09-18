@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 
 const inter = Inter({ 
   subsets: ['latin'],
-  weights: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-inter',
   display: 'swap',
   preload: true,

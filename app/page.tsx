@@ -15,10 +15,7 @@ const Services = dynamic(() => import('../components/Services'), {
   ssr: true
 });
 
-const QuiSommesNous = dynamic(() => import('../components/QuiSommesNous'), {
-  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />,
-  ssr: true
-});
+// import QuiSommesNous from '../components/QuiSommesNous';
 
 const Footer = dynamic(() => import('../components/Footer'), {
   loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-lg" />,
@@ -32,8 +29,6 @@ export default function Home() {
       <Hero />
       <ClientLogos />
       <Services />
-
-      <QuiSommesNous />
       <Footer />
     </main>
   );

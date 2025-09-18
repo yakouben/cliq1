@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   const services = [
-    "Marketing d&apos;influence",
+    "Marketing d'influence",
     "Social Media", 
     "Brand Content",
     "Événementiel",
