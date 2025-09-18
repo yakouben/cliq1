@@ -40,8 +40,8 @@ const ClientLogos = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Ils nous font <span className="text-purple-600">confiance</span>
+          <h2 className="text-4xl font-bold text-gray-900 mb-2">
+            Nos <span className="text-purple-600">références</span>
           </h2>
           <p className="text-gray-600">
             Plus de 10 clients satisfaits nous accompagnent dans leur croissance digitale

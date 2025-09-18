@@ -2,112 +2,111 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
+import { ArrowRight, Home, Briefcase, Phone } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Accueil', href: '#hero' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Accueil', href: '#hero', icon: Home },
+    { name: 'Services', href: '#services', icon: Briefcase },
+    { name: 'Contact', href: '#footer', icon: Phone },
   ];
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isMounted && isScrolled 
-          ? 'bg-white/95 backdrop-blur-lg shadow-lg border-b border-purple-100' 
-          : 'bg-transparent'
-      } ${isMounted ? 'sm:bg-white sm:border-2 sm:border-purple-500 sm:rounded-full sm:mx-4 sm:mt-4 sm:overflow-hidden' : ''}`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
+      suppressHydrationWarning
     >
-      <div className={`max-w-7xl mx-auto px-6 lg:px-8 ${isMounted ? 'sm:px-4' : ''}`}>
-        <div className={`flex items-center justify-between h-20 ${isMounted ? 'sm:h-16' : ''}`}>
-          {/* Logo */}
-          
-            <div className={`w-28 h-28 flex items-center justify-center ${isMounted ? 'sm:w-20 sm:h-20' : ''}`}>
-              <img src="/logo-without-bg.png" alt="cliq logo" className="w-full h-full object-contain" />
-            </div>
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                {item.name}
-                <motion.div
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-purple-600 origin-left"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.2 }}
-                />
-              </motion.a>
-            ))}
-          </nav>
-
-          {/* CTA Button */}
-          <motion.button
-            className="hidden lg:block px-6 py-3 gradient-purple text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            Demander un devis
-          </motion.button>
-
-          {/* Mobile menu button */}
-          <button
-            className="lg:hidden p-2 rounded-lg hover:bg-purple-50 text-gray-700 hover:text-purple-600 transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className={`lg:hidden overflow-hidden ${isMobileMenuOpen ? 'max-h-96' : 'max-h-0'}`}
-          initial={false}
-          animate={{ height: isMobileMenuOpen ? 'auto' : 0 }}
-          transition={{ duration: 0.3 }}
+          className={`mt-4 mx-4 bg-white border-2 border-purple-500 rounded-full transition-all duration-300 ${
+            isMounted && isScrolled ? '' : ''
+          }`}
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.2 }}
         >
-          <div className="py-4 space-y-4 border-t border-purple-200 sm:border-purple-300">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block px-4 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-            <button className="w-full mt-4 px-6 py-3 gradient-purple text-white font-semibold rounded-xl">
-              Demander un devis
-            </button>
+          <div className="flex items-center justify-between h-16 px-6">
+            
+            {/* Logo */}
+            <Link href="#hero" className="group flex items-center">
+              <div className="w-16 h-16 flex items-center justify-center">
+                <Image 
+                  src="/logo-without-bg.png" 
+                  alt="Cliq - Agence Marketing Digital Premium" 
+                  width={80} 
+                  height={80}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  priority
+                />
+              </div>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-8">
+              {navItems.map((item, index) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-700 hover:text-purple-600 font-medium transition-all duration-300 relative group"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span>{item.name}</span>
+                </motion.a>
+              ))}
+            </nav>
+
+            {/* Mobile Navigation Icons */}
+            <nav className="lg:hidden flex items-center space-x-4">
+              {navItems.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    className="p-2 rounded-full hover:bg-purple-50 text-gray-700 hover:text-purple-600 transition-all duration-300 group"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.1, duration: 0.3 }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <IconComponent className="w-5 h-5" />
+                  </motion.a>
+                );
+              })}
+            </nav>
+
+            {/* Desktop CTA Button */}
+            <motion.a
+              href="#services"
+              className="hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-300 group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span>Demander un devis</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </motion.a>
           </div>
         </motion.div>
       </div>

@@ -59,7 +59,7 @@ const Hero = () => {
   }), []);
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center hero-background pt-24 sm:pt-28 lg:pt-20 pb-4 sm:pb-8 lg:pb-8 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center hero-background pt-32 sm:pt-36 lg:pt-20 pb-4 sm:pb-8 lg:pb-8 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -107,13 +107,13 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+          className="flex flex-col lg:grid lg:grid-cols-2 gap-px lg:gap-12 items-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Content Section */}
-          <div className="text-center lg:text-left order-1 lg:sticky lg:top-20 mb-4 sm:mb-6 lg:mb-0">
+          <div className="text-center lg:text-left order-1 lg:sticky lg:top-20 mb-px sm:mb-6 lg:mb-0">
             <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
               variants={itemVariants}
@@ -187,12 +187,12 @@ const Hero = () => {
               className="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed"
               variants={itemVariants}
             >
-              Agence 360° spécialisée en marketing d'influence, communication et branding premium. 
+              Agence 360° spécialisée en marketing d'influence, communication, development web et branding premium. 
             </motion.p>
 
             {/* CTA Buttons - Desktop Only */}
             <motion.div
-              className="hidden lg:flex flex-col sm:flex-row gap-4 sm:gap-0 justify-center lg:justify-start"
+              className="hidden lg:flex flex-row gap-6 justify-center lg:justify-start"
               variants={itemVariants}
             >
               <motion.button
@@ -220,7 +220,7 @@ const Hero = () => {
 
           {/* Right Content - Enhanced Hero Logo */}
           <motion.div
-            className="relative order-2 flex items-center justify-center mt-4 sm:mt-0 lg:mt-0"
+            className="relative order-2 flex items-center justify-center  sm:mt-0 lg:mt-0"
             variants={imageVariants}
           >
             <motion.div
@@ -276,7 +276,7 @@ const Hero = () => {
 
         {/* CTA Buttons - After Image on Mobile */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:hidden mt-8 sm:mt-12"
+          className="flex flex-col sm:flex-row gap-6 justify-center lg:hidden mt-8 sm:mt-12"
           variants={itemVariants}
           initial="hidden"
           animate="visible"
