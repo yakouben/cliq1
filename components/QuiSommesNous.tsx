@@ -27,7 +27,7 @@ const QuiSommesNous = () => {
     {
       icon: Building,
       title: "Impact",
-      description: "Brand Content, Socials Ads, Event, RP... Nous combinons les bons leviers pour maximiser la visibilité, l'engagement, les visites sur votre site, etc."
+      description: "Brand Content, Socials Ads, Event, RP... Nous combinons les bons leviers pour maximiser la visibilité, l&apos;engagement, les visites sur votre site, etc."
     },
     {
       icon: MessageCircle,

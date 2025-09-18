@@ -8,7 +8,7 @@ import { useMemo } from 'react';
 const Services = () => {
   const services = useMemo(() => [
     {
-      title: "Marketing d'influence",
+      title: "Marketing d&apos;influence",
       description: "Accompagnement ponctuel ou annuel avec nos équipes de gestion de projet et planning stratégique pour des campagnes créatives.",
       icon: "/baff.png",
       gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
@@ -26,14 +26,14 @@ const Services = () => {
       gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
     },
     {
-      title: "L'organisation d'événement",
-      description: "Organisation complète d'événements, gestion logistique, coordination des prestataires et mise en place d'expériences mémorables.",
+      title: "L&apos;organisation d&apos;événement",
+      description: "Organisation complète d&apos;événements, gestion logistique, coordination des prestataires et mise en place d&apos;expériences mémorables.",
       icon: "/calendar.png",
       gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
     },
     {
       title: "Expérience de marque",
-      description: "Organisation d'événements locaux, set design, recherche de prestataires et logistique pour des événements impactants.",
+      description: "Organisation d&apos;événements locaux, set design, recherche de prestataires et logistique pour des événements impactants.",
       icon: "/target.png",
       gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
     },

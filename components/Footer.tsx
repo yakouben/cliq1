@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   const services = [
-    "Marketing d'influence",
+    "Marketing d&apos;influence",
     "Social Media", 
     "Brand Content",
     "Événementiel",
@@ -59,7 +59,7 @@ const Footer = () => {
 
               {/* Company Description */}
               <p className="text-white text-lg leading-relaxed max-w-md">
-                Agence 360° spécialisée en marketing d'influence, communication et branding premium.
+                Agence 360° spécialisée en marketing d&apos;influence, communication et branding premium.
               </p>
 
               {/* Contact Info */}

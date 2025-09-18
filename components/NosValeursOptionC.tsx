@@ -45,7 +45,7 @@ const NosValeursOptionC = () => {
       icon: Diamond,
       title: "Le professionnalisme",
       subtitle: "Excellence",
-      description: "Un engagement total vers l'excellence dans la qualité de nos services et de nos relations clients.",
+      description: "Un engagement total vers l&apos;excellence dans la qualité de nos services et de nos relations clients.",
       details: [
         "Standards de qualité élevés",
         "Délais respectés",
