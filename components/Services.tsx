@@ -199,7 +199,7 @@ const Services = () => {
                         `
                       }}
                     >
-                      Demander un devis
+                       devis
                       <ArrowRight className="w-4 h-4 relative z-10" />
               </motion.button>
                   </div>
