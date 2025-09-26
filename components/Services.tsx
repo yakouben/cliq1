@@ -74,10 +74,6 @@ const Services = () => {
       opacity: 1,
       scale: 1,
       rotateX: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
     },
   }), []);
 
@@ -129,6 +125,10 @@ const Services = () => {
               key={index}
               className="relative"
               variants={cardVariants}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
             >
               {/* Modern Card Container with Glassmorphism */}
               <div 

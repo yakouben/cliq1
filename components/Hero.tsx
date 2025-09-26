@@ -138,7 +138,7 @@ const Hero = () => {
               className="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed"
               variants={itemVariants}
             >
-              Agence 360° spécialisée en marketing d'influence, communication, development web et branding premium. 
+              Agence 360° spécialisée en marketing d&apos;influence, communication, development web et branding premium. 
             </motion.p>
 
             {/* CTA Buttons - Desktop Only */}

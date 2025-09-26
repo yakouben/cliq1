@@ -12,18 +12,17 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cliqevents.com'),
-  title: 'Cliq - Agence Marketing Digital Premium en Algérie | Marketing d\'/Influence & Communication',
-  description: 'Agence 360° spécialisée en marketing d\'/influence, communication digitale, développement web, branding et événementiel premium en Algérie. Transformez vos idées en succès digitaux.',
+  title: 'Cliq - Agence Marketing Digital Premium en Algérie | Marketing d&apos;Influence & Communication',
+  description: 'Agence 360° spécialisée en marketing d&apos;influence, communication digitale, développement web, branding et événementiel premium en Algérie. Transformez vos idées en succès digitaux.',
   keywords: 'marketing digital Algérie, marketing influence, agence communication, développement web, branding, événementiel, social media management, stratégie digitale, Algérie',
   authors: [{ name: 'Cliq Events', url: 'https://cliqevents.com' }],
   creator: 'Cliq Events',
   publisher: 'Cliq Events',
   robots: 'index, follow',
   openGraph: {
-    canonical: 'https://cliqevents.com',
     type: 'website',
     title: 'Cliq - Agence Marketing Digital Premium en Algérie',
-    description: 'Agence 360° spécialisée en marketing d\'/influence, communication digitale, développement web, branding et événementiel premium en Algérie.',
+    description: 'Agence 360° spécialisée en marketing d&apos;influence, communication digitale, développement web, branding et événementiel premium en Algérie.',
     locale: 'fr_FR',
     siteName: 'Cliq Events',
     url: 'https://cliqevents.com',
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Cliq - Agence Marketing Digital Premium en Algérie',
-    description: 'Agence 360° spécialisée en marketing d\'/influence, communication digitale, développement web, branding et événementiel premium en Algérie.',
+    description: 'Agence 360° spécialisée en marketing d&apos;influence, communication digitale, développement web, branding et événementiel premium en Algérie.',
     images: ['/cliq-logo-bg.jpeg'],
   },
   verification: {
@@ -69,7 +68,7 @@ export default function RootLayout({
               "name": "Cliq Events",
               "url": "https://cliqevents.com",
               "logo": "https://cliqevents.com/cliq-logo-bg.jpeg",
-              "description": "Agence 360° spécialisée en marketing d'influence, communication digitale, développement web, branding et événementiel premium en Algérie.",
+              "description": "Agence 360° spécialisée en marketing d&apos;influence, communication digitale, développement web, branding et événementiel premium en Algérie.",
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "DZ",
@@ -94,8 +93,8 @@ export default function RootLayout({
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Marketing d'influence",
-                      "description": "Stratégies de marketing d'influence pour augmenter votre visibilité"
+                      "name": "Marketing d&apos;influence",
+                      "description": "Stratégies de marketing d&apos;influence pour augmenter votre visibilité"
                     }
                   }
                 ]
