@@ -111,50 +111,9 @@ const Hero = () => {
               variants={itemVariants}
               style={{ y, opacity }}
             >
-              Un cliq, est votre{' '}
-              <span className="relative inline-block align-baseline">
-                <motion.span
-                  className="text-gradient inline-block relative z-10"
-                  animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  style={{ backgroundSize: "200% 200%" }}
-                >
-                  projet
-                  {/* Gradient sheen */}
-                  <motion.span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 bg-[linear-gradient(75deg,transparent,rgba(255,255,255,0.7),transparent)] bg-[length:200%_100%] opacity-60 mix-blend-screen"
-                    animate={{ backgroundPositionX: ["-100%", "100%"] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 2, ease: "easeInOut" }}
-                  />
-                </motion.span>
-                {/* Hand-drawn underline */}
-                <motion.svg
-                  viewBox="0 0 300 40"
-                  preserveAspectRatio="none"
-                  className="absolute left-0 right-0 -bottom-2 w-full h-6"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                >
-                  <motion.path
-                    d="M5 25 C 80 5, 220 5, 295 25"
-                    fill="none"
-                    stroke="url(#grad)"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeDasharray="400"
-                    strokeDashoffset="400"
-                    animate={{ strokeDashoffset: [400, 0] }}
-                    transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
-                  />
-                  <defs>
-                    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#8b5cf6" />
-                      <stop offset="100%" stopColor="#ec4899" />
-                    </linearGradient>
-                  </defs>
-                </motion.svg>
+              Un cliq, et votre{' '}
+              <span className="text-black">
+                projet
               </span>{' '}
               est a{' '}
               <motion.span
@@ -171,7 +130,7 @@ const Hero = () => {
                   backgroundSize: "200% 200%",
                 }}
               >
-                porté de main .
+                portée de main .
               </motion.span>
             </motion.h1>
 
@@ -179,7 +138,7 @@ const Hero = () => {
               className="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed"
               variants={itemVariants}
             >
-              Agence 360° spécialisée en marketing d&apos;influence, communication, development web et branding premium. 
+              Agence 360° spécialisée en marketing d'influence, communication, development web et branding premium. 
             </motion.p>
 
             {/* CTA Buttons - Desktop Only */}

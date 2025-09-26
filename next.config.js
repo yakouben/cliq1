@@ -27,7 +27,6 @@ const nextConfig = {
   generateEtags: true,
   
   // Bundle optimization
-  swcMinify: true,
   reactStrictMode: true,
   
   // Bundle analyzer (uncomment to analyze bundle)
